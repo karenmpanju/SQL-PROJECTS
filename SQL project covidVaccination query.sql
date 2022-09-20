@@ -67,7 +67,6 @@ AND cd.date = cv.date
 WHERE cd.continent is not NULL          
 SELECT *, (Rolling_People_Vaccinated)/Population * 100 FROM Perpopulation_vacc as percent_population_vaccinated;
 
-SELECT population, date FROM perpopulation_vacc
 
 select cd.location, cd.date, cd.population, cd.continent, cv.new_vaccinations,
 MAX(CONVERT(bigint,cv.new_vaccinations)) OVER (PARTITION by cd.location order by cd.location, cd.date) as Rolling_People_vaccinated
